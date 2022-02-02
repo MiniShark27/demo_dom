@@ -4,7 +4,8 @@ const port = 3000
 
 const users = {
   'benmelz': 'benspassword',
-  'jakobfalus': 'jakobspassword'
+  'jakobfalus': 'jakobspassword',
+  'test': '1234'
 }
 
 app.use(express.urlencoded({ extended: true }))
