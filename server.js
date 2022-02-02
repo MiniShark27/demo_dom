@@ -8,6 +8,7 @@ const users = {
 }
 
 app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
@@ -15,13 +16,14 @@ app.get('/', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
+  console.log(req.body);
   const { username, password } = req.body
   if (users[username] === password) {
     console.log(`Logged in as ${username}`)
-    res.status(200).end()
+    res.status(200).send(`Hello ${username}`)
   } else {
     console.log('Login failure')
-    res.status(401).end()
+    res.status(401).send('Failed')
   }
 })
 
