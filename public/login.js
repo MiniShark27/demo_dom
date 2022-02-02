@@ -1,4 +1,6 @@
 function login() {
+
+  //Get username/password from html inputs
   const username_input = document.getElementById('username');
   const username = username_input.value
   const password_input = document.getElementById('pass');
